@@ -92,7 +92,15 @@ nes_recycle --help
 - 自動入力対象: お客様番号、氏名、郵便番号、住所、電話番号、メールアドレス、回収希望日、時間帯、カプセル種類、バッグ数、確認チェック項目
 - 送信動作: 自動では送信せず、確認画面へ進む前にブラウザ上で内容を確認する前提
 
-Chrome / Edge では `extension/` をパッケージ化されていない拡張機能として読み込みます。Safari では `xcrun safari-web-extension-converter extension` でSafari App Extensionへ変換します。詳しくは `extension/README.md` を参照してください。
+Chrome / Edge では `extension/` をパッケージ化されていない拡張機能として読み込みます。Safari の配布版は以下のCaskでインストールでき、ソースからの開発時は `xcrun safari-web-extension-converter extension` でSafari App Extensionへ変換します。詳しくは `extension/README.md` を参照してください。
+
+macOS 26.2以降のSafari向けには、署名・公証済みアプリをHomebrewでインストールできます。CLI用の `rioriost/tap/nes_recycle` とは別のCaskです。
+
+```sh
+brew install --cask rioriost/cask/nes-recycle-safari
+```
+
+インストール後に `nes_recycle.app` を一度開き、Safariの「設定」→「機能拡張」で有効にしてください。対象サイトへのアクセス許可も必要です。
 
 配布用zipを作成する場合:
 

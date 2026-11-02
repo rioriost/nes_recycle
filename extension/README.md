@@ -44,7 +44,15 @@ make extension-package
 
 ## Safari での読み込み
 
-Safari は WebExtension を Safari App Extension としてラップする必要があります。
+macOS 26.2以降では、署名・公証済みのSafariアプリをHomebrewでインストールできます。
+
+```sh
+brew install --cask rioriost/cask/nes-recycle-safari
+```
+
+インストール後に `nes_recycle.app` を一度開き、Safariの「設定」→「機能拡張」で有効にして、`input-form.jp` へのアクセスを許可してください。CLIの `rioriost/tap/nes_recycle` とは別のCaskです。
+
+開発用にソースから読み込む場合、Safari は WebExtension を Safari App Extension としてラップする必要があります。
 
 ```sh
 xcrun safari-web-extension-converter extension
